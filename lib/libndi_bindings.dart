@@ -6,7 +6,7 @@ import 'libndi_bindings_generated.dart';
 
 /// The dynamic library in which the symbols for [LibndiBindings] can be found.
 final DynamicLibrary _dylib = () {
-  if (Platform.isMacOS || Platform.isIOS) {
+  if (Platform.isIOS) {
     return DynamicLibrary.process();
   }
   throw UnsupportedError('Unknown platform: ${Platform.operatingSystem}');
