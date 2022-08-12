@@ -1,15 +1,13 @@
 # Run with `dart run ffigen --config ffigen.yaml`.
-name: LibndiBindingsBindings
+name: LibndiBindings
 description: |
   Bindings for `src/libndi_bindings.h`.
 
   Regenerate bindings with `dart run ffigen --config ffigen.yaml`.
-output: 'lib/libndi_bindings_bindings_generated.dart'
+output: 'lib/libndi_bindings_generated.dart'
 headers:
   entry-points:
-    - 'src/libndi_bindings.h'
-  include-directives:
-    - 'src/libndi_bindings.h'
+    - 'src/Processing.NDI.Lib.h'
 preamble: |
   // ignore_for_file: always_specify_types
   // ignore_for_file: camel_case_types
