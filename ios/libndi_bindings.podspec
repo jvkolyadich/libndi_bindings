@@ -18,7 +18,10 @@ Minimal project to get libndi bindings to work on ios.
   # paths, so Classes contains a forwarder C file that relatively imports
   # `../src/*` so that the C sources can be shared among all target platforms.
   s.source           = { :path => '.' }
-  s.source_files = 'Classes/**/*'
+  s.public_header_files = 'Classes/**/*.h'
+  s.static_framework = true
+  s.vendored_libraries = "**/*.a"
+
   s.dependency 'Flutter'
   s.platform = :ios, '9.0'
 
