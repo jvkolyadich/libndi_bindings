@@ -65,7 +65,7 @@ class LibndiBindings {
   set NDIlib_send_timecode_synthesize(int value) =>
       _NDIlib_send_timecode_synthesize.value = value;
 
-  /// If the time-stamp is not available (i.e. a version of a sender before v2.5)
+  /// If the time-stamp is not available (i.e. a version of a sender before v2.5).
   late final ffi.Pointer<ffi.Int64> _NDIlib_recv_timestamp_undefined =
       _lookup<ffi.Int64>('NDIlib_recv_timestamp_undefined');
 
@@ -321,7 +321,7 @@ class LibndiBindings {
           ffi.Pointer<NDIlib_metadata_frame_t>,
           int)>();
 
-  /// Free the buffers returned by capture for video
+  /// Free the buffers returned by capture for video.
   void NDIlib_recv_free_video_v2(
     NDIlib_recv_instance_t p_instance,
     ffi.Pointer<NDIlib_video_frame_v2_t> p_video_data,
@@ -342,7 +342,7 @@ class LibndiBindings {
           void Function(
               NDIlib_recv_instance_t, ffi.Pointer<NDIlib_video_frame_v2_t>)>();
 
-  /// Free the buffers returned by capture for audio
+  /// Free the buffers returned by capture for audio.
   void NDIlib_recv_free_audio_v2(
     NDIlib_recv_instance_t p_instance,
     ffi.Pointer<NDIlib_audio_frame_v2_t> p_audio_data,
@@ -363,7 +363,7 @@ class LibndiBindings {
           void Function(
               NDIlib_recv_instance_t, ffi.Pointer<NDIlib_audio_frame_v2_t>)>();
 
-  /// Free the buffers returned by capture for audio
+  /// Free the buffers returned by capture for audio.
   void NDIlib_recv_free_audio_v3(
     NDIlib_recv_instance_t p_instance,
     ffi.Pointer<NDIlib_audio_frame_v3_t> p_audio_data,
@@ -384,7 +384,7 @@ class LibndiBindings {
           void Function(
               NDIlib_recv_instance_t, ffi.Pointer<NDIlib_audio_frame_v3_t>)>();
 
-  /// Free the buffers returned by capture for metadata
+  /// Free the buffers returned by capture for metadata.
   void NDIlib_recv_free_metadata(
     NDIlib_recv_instance_t p_instance,
     ffi.Pointer<NDIlib_metadata_frame_t> p_metadata,
@@ -596,7 +596,7 @@ class LibndiBindings {
 
   /// Has this receiver got PTZ control. Note that it might take a second or two after the connection for this
   /// value to be set. To avoid the need to poll this function, you can know when the value of this function
-  /// might have changed when the NDILib_recv_capture* call would return NDIlib_frame_type_status_change
+  /// might have changed when the NDILib_recv_capture* call would return NDIlib_frame_type_status_change.
   bool NDIlib_recv_ptz_is_supported(
     NDIlib_recv_instance_t p_instance,
   ) {
@@ -640,7 +640,7 @@ class LibndiBindings {
       _NDIlib_recv_recording_is_supportedPtr.asFunction<
           int Function(NDIlib_recv_instance_t)>();
 
-  /// PTZ Controls
+  /// PTZ Controls.
   /// Zoom to an absolute value.
   /// zoom_value = 0.0 (zoomed in) ... 1.0 (zoomed out)
   bool NDIlib_recv_ptz_zoom(
@@ -661,7 +661,7 @@ class LibndiBindings {
   late final _NDIlib_recv_ptz_zoom = _NDIlib_recv_ptz_zoomPtr.asFunction<
       int Function(NDIlib_recv_instance_t, double)>();
 
-  /// Zoom at a particular speed
+  /// Zoom at a particular speed.
   /// zoom_speed = -1.0 (zoom outwards) ... +1.0 (zoom inwards)
   bool NDIlib_recv_ptz_zoom_speed(
     NDIlib_recv_instance_t p_instance,
@@ -681,7 +681,7 @@ class LibndiBindings {
   late final _NDIlib_recv_ptz_zoom_speed = _NDIlib_recv_ptz_zoom_speedPtr
       .asFunction<int Function(NDIlib_recv_instance_t, double)>();
 
-  /// Set the pan and tilt to an absolute value
+  /// Set the pan and tilt to an absolute value.
   /// pan_value  = -1.0 (left) ... 0.0 (centered) ... +1.0 (right)
   /// tilt_value = -1.0 (bottom) ... 0.0 (centered) ... +1.0 (top)
   bool NDIlib_recv_ptz_pan_tilt(
@@ -704,7 +704,7 @@ class LibndiBindings {
   late final _NDIlib_recv_ptz_pan_tilt = _NDIlib_recv_ptz_pan_tiltPtr
       .asFunction<int Function(NDIlib_recv_instance_t, double, double)>();
 
-  /// Set the pan and tilt direction and speed
+  /// Set the pan and tilt direction and speed.
   /// pan_speed = -1.0 (moving right) ... 0.0 (stopped) ... +1.0 (moving left)
   /// tilt_speed = -1.0 (down) ... 0.0 (stopped) ... +1.0 (moving up)
   bool NDIlib_recv_ptz_pan_tilt_speed(
@@ -750,7 +750,7 @@ class LibndiBindings {
 
   /// Recall a preset, including position, focus, etc...
   /// preset_no = 0 ... 99
-  /// speed = 0.0(as slow as possible) ... 1.0(as fast as possible) The speed at which to move to the new preset
+  /// speed = 0.0(as slow as possible) ... 1.0(as fast as possible) The speed at which to move to the new preset.
   bool NDIlib_recv_ptz_recall_preset(
     NDIlib_recv_instance_t p_instance,
     int preset_no,
@@ -771,7 +771,7 @@ class LibndiBindings {
   late final _NDIlib_recv_ptz_recall_preset = _NDIlib_recv_ptz_recall_presetPtr
       .asFunction<int Function(NDIlib_recv_instance_t, int, double)>();
 
-  /// Put the camera in auto-focus
+  /// Put the camera in auto-focus.
   bool NDIlib_recv_ptz_auto_focus(
     NDIlib_recv_instance_t p_instance,
   ) {
@@ -807,7 +807,7 @@ class LibndiBindings {
   late final _NDIlib_recv_ptz_focus = _NDIlib_recv_ptz_focusPtr.asFunction<
       int Function(NDIlib_recv_instance_t, double)>();
 
-  /// Focus at a particular speed
+  /// Focus at a particular speed.
   /// focus_speed = -1.0 (focus outwards) ... +1.0 (focus inwards)
   bool NDIlib_recv_ptz_focus_speed(
     NDIlib_recv_instance_t p_instance,
@@ -827,7 +827,7 @@ class LibndiBindings {
   late final _NDIlib_recv_ptz_focus_speed = _NDIlib_recv_ptz_focus_speedPtr
       .asFunction<int Function(NDIlib_recv_instance_t, double)>();
 
-  /// Put the camera in auto white balance mode
+  /// Put the camera in auto white balance mode.
   bool NDIlib_recv_ptz_white_balance_auto(
     NDIlib_recv_instance_t p_instance,
   ) {
@@ -844,7 +844,7 @@ class LibndiBindings {
       _NDIlib_recv_ptz_white_balance_autoPtr.asFunction<
           int Function(NDIlib_recv_instance_t)>();
 
-  /// Put the camera in indoor white balance
+  /// Put the camera in indoor white balance.
   bool NDIlib_recv_ptz_white_balance_indoor(
     NDIlib_recv_instance_t p_instance,
   ) {
@@ -861,7 +861,7 @@ class LibndiBindings {
       _NDIlib_recv_ptz_white_balance_indoorPtr.asFunction<
           int Function(NDIlib_recv_instance_t)>();
 
-  /// Put the camera in indoor white balance
+  /// Put the camera in indoor white balance.
   bool NDIlib_recv_ptz_white_balance_outdoor(
     NDIlib_recv_instance_t p_instance,
   ) {
@@ -878,7 +878,7 @@ class LibndiBindings {
       _NDIlib_recv_ptz_white_balance_outdoorPtr.asFunction<
           int Function(NDIlib_recv_instance_t)>();
 
-  /// Use the current brightness to automatically set the current white balance
+  /// Use the current brightness to automatically set the current white balance.
   bool NDIlib_recv_ptz_white_balance_oneshot(
     NDIlib_recv_instance_t p_instance,
   ) {
@@ -895,7 +895,7 @@ class LibndiBindings {
       _NDIlib_recv_ptz_white_balance_oneshotPtr.asFunction<
           int Function(NDIlib_recv_instance_t)>();
 
-  /// Set the manual camera white balance using the R, B values
+  /// Set the manual camera white balance using the R, B values.
   /// red = 0.0(not red) ... 1.0(very red)
   /// blue = 0.0(not blue) ... 1.0(very blue)
   bool NDIlib_recv_ptz_white_balance_manual(
@@ -919,7 +919,7 @@ class LibndiBindings {
       _NDIlib_recv_ptz_white_balance_manualPtr.asFunction<
           int Function(NDIlib_recv_instance_t, double, double)>();
 
-  /// Put the camera in auto-exposure mode
+  /// Put the camera in auto-exposure mode.
   bool NDIlib_recv_ptz_exposure_auto(
     NDIlib_recv_instance_t p_instance,
   ) {
@@ -935,7 +935,7 @@ class LibndiBindings {
   late final _NDIlib_recv_ptz_exposure_auto = _NDIlib_recv_ptz_exposure_autoPtr
       .asFunction<int Function(NDIlib_recv_instance_t)>();
 
-  /// Manually set the camera exposure iris
+  /// Manually set the camera exposure iris.
   /// exposure_level = 0.0(dark) ... 1.0(light)
   bool NDIlib_recv_ptz_exposure_manual(
     NDIlib_recv_instance_t p_instance,
@@ -956,7 +956,7 @@ class LibndiBindings {
       _NDIlib_recv_ptz_exposure_manualPtr.asFunction<
           int Function(NDIlib_recv_instance_t, double)>();
 
-  /// Manually set the camera exposure parameters
+  /// Manually set the camera exposure parameters.
   /// iris = 0.0(dark) ... 1.0(light)
   /// gain = 0.0(dark) ... 1.0(light)
   /// shutter_speed = 0.0(slow) ... 1.0(fast)
@@ -983,7 +983,7 @@ class LibndiBindings {
       _NDIlib_recv_ptz_exposure_manual_v2Ptr.asFunction<
           int Function(NDIlib_recv_instance_t, double, double, double)>();
 
-  /// Recording control
+  /// Recording control.
   /// This will start recording.If the recorder was already recording then the message is ignored.A filename is
   /// passed in as a "hint".Since the recorder might already be recording(or might not allow complete
   /// flexibility over its filename), the filename might or might not be used.If the filename is empty, or not
@@ -1028,7 +1028,7 @@ class LibndiBindings {
   late final _NDIlib_recv_recording_stop = _NDIlib_recv_recording_stopPtr
       .asFunction<int Function(NDIlib_recv_instance_t)>();
 
-  /// This will control the audio level for the recording.dB is specified in decibels relative to the reference
+  /// This will control the audio level for the recording. dB is specified in decibels relative to the reference
   /// level of the source. Not all recording sources support controlling audio levels.For instance, a digital
   /// audio device would not be able to avoid clipping on sources already at the wrong level, thus might not
   /// support this message.
@@ -1173,7 +1173,7 @@ class LibndiBindings {
   late final _NDIlib_send_destroy = _NDIlib_send_destroyPtr.asFunction<
       void Function(NDIlib_send_instance_t)>();
 
-  /// This will add a video frame
+  /// This will add a video frame.
   void NDIlib_send_send_video_v2(
     NDIlib_send_instance_t p_instance,
     ffi.Pointer<NDIlib_video_frame_v2_t> p_video_data,
@@ -1228,7 +1228,7 @@ class LibndiBindings {
           void Function(
               NDIlib_send_instance_t, ffi.Pointer<NDIlib_video_frame_v2_t>)>();
 
-  /// This will add an audio frame
+  /// This will add an audio frame.
   void NDIlib_send_send_audio_v2(
     NDIlib_send_instance_t p_instance,
     ffi.Pointer<NDIlib_audio_frame_v2_t> p_audio_data,
@@ -1249,7 +1249,7 @@ class LibndiBindings {
           void Function(
               NDIlib_send_instance_t, ffi.Pointer<NDIlib_audio_frame_v2_t>)>();
 
-  /// This will add an audio frame
+  /// This will add an audio frame.
   void NDIlib_send_send_audio_v3(
     NDIlib_send_instance_t p_instance,
     ffi.Pointer<NDIlib_audio_frame_v3_t> p_audio_data,
@@ -1270,7 +1270,7 @@ class LibndiBindings {
           void Function(
               NDIlib_send_instance_t, ffi.Pointer<NDIlib_audio_frame_v3_t>)>();
 
-  /// This will add a metadata frame
+  /// This will add a metadata frame.
   void NDIlib_send_send_metadata(
     NDIlib_send_instance_t p_instance,
     ffi.Pointer<NDIlib_metadata_frame_t> p_metadata,
@@ -1291,7 +1291,7 @@ class LibndiBindings {
           void Function(
               NDIlib_send_instance_t, ffi.Pointer<NDIlib_metadata_frame_t>)>();
 
-  /// This allows you to receive metadata from the other end of the connection
+  /// This allows you to receive metadata from the other end of the connection.
   int NDIlib_send_capture(
     NDIlib_send_instance_t p_instance,
     ffi.Pointer<NDIlib_metadata_frame_t> p_metadata,
@@ -1314,7 +1314,7 @@ class LibndiBindings {
       int Function(
           NDIlib_send_instance_t, ffi.Pointer<NDIlib_metadata_frame_t>, int)>();
 
-  /// Free the buffers returned by capture for metadata
+  /// Free the buffers returned by capture for metadata.
   void NDIlib_send_free_metadata(
     NDIlib_send_instance_t p_instance,
     ffi.Pointer<NDIlib_metadata_frame_t> p_metadata,
@@ -1461,7 +1461,7 @@ class LibndiBindings {
       _NDIlib_send_get_source_namePtr.asFunction<
           ffi.Pointer<NDIlib_source_t> Function(NDIlib_send_instance_t)>();
 
-  /// Create an NDI routing source
+  /// Create an NDI routing source.
   NDIlib_routing_instance_t NDIlib_routing_create(
     ffi.Pointer<NDIlib_routing_create_t> p_create_settings,
   ) {
@@ -1478,7 +1478,7 @@ class LibndiBindings {
       NDIlib_routing_instance_t Function(
           ffi.Pointer<NDIlib_routing_create_t>)>();
 
-  /// Destroy and NDI routing source
+  /// Destroy and NDI routing source.
   void NDIlib_routing_destroy(
     NDIlib_routing_instance_t p_instance,
   ) {
@@ -1493,7 +1493,7 @@ class LibndiBindings {
   late final _NDIlib_routing_destroy = _NDIlib_routing_destroyPtr.asFunction<
       void Function(NDIlib_routing_instance_t)>();
 
-  /// Change the routing of this source to another destination
+  /// Change the routing of this source to another destination.
   bool NDIlib_routing_change(
     NDIlib_routing_instance_t p_instance,
     ffi.Pointer<NDIlib_source_t> p_source,
@@ -1512,7 +1512,7 @@ class LibndiBindings {
   late final _NDIlib_routing_change = _NDIlib_routing_changePtr.asFunction<
       int Function(NDIlib_routing_instance_t, ffi.Pointer<NDIlib_source_t>)>();
 
-  /// Change the routing of this source to another destination
+  /// Change the routing of this source to another destination.
   bool NDIlib_routing_clear(
     NDIlib_routing_instance_t p_instance,
   ) {
@@ -1568,7 +1568,7 @@ class LibndiBindings {
       _NDIlib_routing_get_source_namePtr.asFunction<
           ffi.Pointer<NDIlib_source_t> Function(NDIlib_routing_instance_t)>();
 
-  /// This will add an audio frame in interleaved 16bpp.
+  /// This will add an audio frame in interleaved 16-bit.
   void NDIlib_util_send_send_audio_interleaved_16s(
     NDIlib_send_instance_t p_instance,
     ffi.Pointer<NDIlib_audio_frame_interleaved_16s_t> p_audio_data,
@@ -1589,7 +1589,7 @@ class LibndiBindings {
           void Function(NDIlib_send_instance_t,
               ffi.Pointer<NDIlib_audio_frame_interleaved_16s_t>)>();
 
-  /// This will add an audio frame in interleaved 32bpp.
+  /// This will add an audio frame in interleaved 32-bit.
   void NDIlib_util_send_send_audio_interleaved_32s(
     NDIlib_send_instance_t p_instance,
     ffi.Pointer<NDIlib_audio_frame_interleaved_32s_t> p_audio_data,
@@ -1631,7 +1631,7 @@ class LibndiBindings {
           void Function(NDIlib_send_instance_t,
               ffi.Pointer<NDIlib_audio_frame_interleaved_32f_t>)>();
 
-  /// Convert to interleaved 16bpp.
+  /// Convert to interleaved 16-bit.
   void NDIlib_util_audio_to_interleaved_16s_v2(
     ffi.Pointer<NDIlib_audio_frame_v2_t> p_src,
     ffi.Pointer<NDIlib_audio_frame_interleaved_16s_t> p_dst,
@@ -1652,7 +1652,7 @@ class LibndiBindings {
           void Function(ffi.Pointer<NDIlib_audio_frame_v2_t>,
               ffi.Pointer<NDIlib_audio_frame_interleaved_16s_t>)>();
 
-  /// Convert from interleaved 16bpp.
+  /// Convert from interleaved 16-bit.
   void NDIlib_util_audio_from_interleaved_16s_v2(
     ffi.Pointer<NDIlib_audio_frame_interleaved_16s_t> p_src,
     ffi.Pointer<NDIlib_audio_frame_v2_t> p_dst,
@@ -1674,7 +1674,7 @@ class LibndiBindings {
           void Function(ffi.Pointer<NDIlib_audio_frame_interleaved_16s_t>,
               ffi.Pointer<NDIlib_audio_frame_v2_t>)>();
 
-  /// Convert to interleaved 32bpp.
+  /// Convert to interleaved 32-bit.
   void NDIlib_util_audio_to_interleaved_32s_v2(
     ffi.Pointer<NDIlib_audio_frame_v2_t> p_src,
     ffi.Pointer<NDIlib_audio_frame_interleaved_32s_t> p_dst,
@@ -1695,7 +1695,7 @@ class LibndiBindings {
           void Function(ffi.Pointer<NDIlib_audio_frame_v2_t>,
               ffi.Pointer<NDIlib_audio_frame_interleaved_32s_t>)>();
 
-  /// Convert from interleaved 32bpp.
+  /// Convert from interleaved 32-bit.
   void NDIlib_util_audio_from_interleaved_32s_v2(
     ffi.Pointer<NDIlib_audio_frame_interleaved_32s_t> p_src,
     ffi.Pointer<NDIlib_audio_frame_v2_t> p_dst,
@@ -1760,7 +1760,7 @@ class LibndiBindings {
           void Function(ffi.Pointer<NDIlib_audio_frame_interleaved_32f_t>,
               ffi.Pointer<NDIlib_audio_frame_v2_t>)>();
 
-  /// This is a helper function that you may use to convert from 10bit packed UYVY into 16bit semi-planar. The
+  /// This is a helper function that you may use to convert from 10-bit packed UYVY into 16-bit semi-planar. The
   /// FourCC on the source is ignored in this function since we do not define a V210 format in NDI. You must
   /// make sure that there is memory and a stride allocated in p_dst.
   void NDIlib_util_V210_to_P216(
@@ -1783,7 +1783,7 @@ class LibndiBindings {
           void Function(ffi.Pointer<NDIlib_video_frame_v2_t>,
               ffi.Pointer<NDIlib_video_frame_v2_t>)>();
 
-  /// This converts from 16bit semi-planar to 10bit. You must make sure that there is memory and a stride
+  /// This converts from 16-bit semi-planar to 10-bit. You must make sure that there is memory and a stride
   /// allocated in p_dst.
   void NDIlib_util_P216_to_V210(
     ffi.Pointer<NDIlib_video_frame_v2_t> p_src_p216,
@@ -1952,7 +1952,7 @@ class LibndiBindings {
           ffi.Pointer<NDIlib_metadata_frame_t>,
           int)>();
 
-  /// Free the buffers returned by capture for video
+  /// Free the buffers returned by capture for video.
   void NDIlib_recv_free_video(
     NDIlib_recv_instance_t p_instance,
     ffi.Pointer<NDIlib_video_frame_t> p_video_data,
@@ -1971,7 +1971,7 @@ class LibndiBindings {
       void Function(
           NDIlib_recv_instance_t, ffi.Pointer<NDIlib_video_frame_t>)>();
 
-  /// Free the buffers returned by capture for audio
+  /// Free the buffers returned by capture for audio.
   void NDIlib_recv_free_audio(
     NDIlib_recv_instance_t p_instance,
     ffi.Pointer<NDIlib_audio_frame_t> p_audio_data,
@@ -1990,7 +1990,7 @@ class LibndiBindings {
       void Function(
           NDIlib_recv_instance_t, ffi.Pointer<NDIlib_audio_frame_t>)>();
 
-  /// This will add a video frame
+  /// This will add a video frame.
   void NDIlib_send_send_video(
     NDIlib_send_instance_t p_instance,
     ffi.Pointer<NDIlib_video_frame_t> p_video_data,
@@ -2172,7 +2172,7 @@ class LibndiBindings {
   late final _NDIlib_framesync_create = _NDIlib_framesync_createPtr.asFunction<
       NDIlib_framesync_instance_t Function(NDIlib_recv_instance_t)>();
 
-  /// Destroy a frame-sync implementation
+  /// Destroy a frame-sync implementation.
   void NDIlib_framesync_destroy(
     NDIlib_framesync_instance_t p_instance,
   ) {
@@ -2199,7 +2199,7 @@ class LibndiBindings {
   ///
   /// NDIlib_framesync_capture_audio(p_instance, p_audio_data, 0, 0, 0);
   ///
-  /// will return in p_audio_data the current received audio format if there is one or sample-rate and
+  /// will return in p_audio_data the current received audio format if there is one or sample_rate and
   /// no_channels equal to zero if there is not one. At any time you can specify sample_rate and no_channels as
   /// zero and it will return the current received audio format.
   void NDIlib_framesync_capture_audio(
@@ -2260,7 +2260,7 @@ class LibndiBindings {
           void Function(NDIlib_framesync_instance_t,
               ffi.Pointer<NDIlib_audio_frame_v3_t>, int, int, int)>();
 
-  /// Free audio returned by NDIlib_framesync_capture_audio
+  /// Free audio returned by NDIlib_framesync_capture_audio.
   void NDIlib_framesync_free_audio(
     NDIlib_framesync_instance_t p_instance,
     ffi.Pointer<NDIlib_audio_frame_v2_t> p_audio_data,
@@ -2367,7 +2367,7 @@ class LibndiBindings {
           void Function(NDIlib_framesync_instance_t,
               ffi.Pointer<NDIlib_video_frame_v2_t>, int)>();
 
-  /// Free audio returned by NDIlib_framesync_capture_video
+  /// Free audio returned by NDIlib_framesync_capture_video.
   void NDIlib_framesync_free_video(
     NDIlib_framesync_instance_t p_instance,
     ffi.Pointer<NDIlib_video_frame_v2_t> p_video_data,
@@ -2388,7 +2388,7 @@ class LibndiBindings {
           void Function(NDIlib_framesync_instance_t,
               ffi.Pointer<NDIlib_video_frame_v2_t>)>();
 
-  /// Load the library
+  /// Load the library.
   ffi.Pointer<NDIlib_v5> NDIlib_v5_load() {
     return _NDIlib_v5_load();
   }
@@ -2409,7 +2409,7 @@ class LibndiBindings {
   late final _NDIlib_v4_5_load =
       _NDIlib_v4_5_loadPtr.asFunction<ffi.Pointer<NDIlib_v4_5> Function()>();
 
-  /// Load the library
+  /// Load the library.
   ffi.Pointer<NDIlib_v4> NDIlib_v4_load() {
     return _NDIlib_v4_load();
   }
@@ -2420,7 +2420,7 @@ class LibndiBindings {
   late final _NDIlib_v4_load =
       _NDIlib_v4_loadPtr.asFunction<ffi.Pointer<NDIlib_v4> Function()>();
 
-  /// Load the library
+  /// Load the library.
   ffi.Pointer<NDIlib_v3> NDIlib_v3_load() {
     return _NDIlib_v3_load();
   }
@@ -2431,6 +2431,7 @@ class LibndiBindings {
   late final _NDIlib_v3_load =
       _NDIlib_v3_loadPtr.asFunction<ffi.Pointer<NDIlib_v3> Function()>();
 
+  /// Load the library.
   ffi.Pointer<NDIlib_v2> NDIlib_v2_load() {
     return _NDIlib_v2_load();
   }
@@ -2539,8 +2540,9 @@ class _opaque_pthread_t extends ffi.Struct {
   external ffi.Array<ffi.Int8> __opaque;
 }
 
-/// An enumeration to specify the type of a packet returned by the functions
+/// An enumeration to specify the type of a packet returned by the functions.
 abstract class NDIlib_frame_type_e {
+  /// What frame type is this?
   static const int NDIlib_frame_type_none = 0;
   static const int NDIlib_frame_type_video = 1;
   static const int NDIlib_frame_type_audio = 2;
@@ -2552,12 +2554,13 @@ abstract class NDIlib_frame_type_e {
   /// instance the web URL has changed or the device is now known to be a PTZ camera.
   static const int NDIlib_frame_type_status_change = 100;
 
-  /// Ensure that the size is 32bits
+  /// Make sure this is a 32-bit enumeration.
   static const int NDIlib_frame_type_max = 2147483647;
 }
 
-/// FourCC values for video frames
+/// FourCC values for video frames.
 abstract class NDIlib_FourCC_video_type_e {
+  /// YCbCr color space using 4:2:2.
   static const int NDIlib_FourCC_video_type_UYVY = 1498831189;
   static const int NDIlib_FourCC_type_UYVY = 1498831189;
 
@@ -2568,14 +2571,14 @@ abstract class NDIlib_FourCC_video_type_e {
   static const int NDIlib_FourCC_video_type_UYVA = 1096178005;
   static const int NDIlib_FourCC_type_UYVA = 1096178005;
 
-  /// YCbCr color space using 4:2:2 in 16bpp
+  /// YCbCr color space using 4:2:2 in 16bpp.
   /// In memory this is a semi-planar format. This is identical to a 16bpp version of the NV16 format.
   /// The first buffer is a 16bpp luminance buffer.
   /// Immediately after this is an interleaved buffer of 16bpp Cb, Cr pairs.
   static const int NDIlib_FourCC_video_type_P216 = 909193808;
   static const int NDIlib_FourCC_type_P216 = 909193808;
 
-  /// YCbCr color space with an alpha channel, using 4:2:2:4
+  /// YCbCr color space with an alpha channel, using 4:2:2:4.
   /// In memory this is a semi-planar format.
   /// The first buffer is a 16bpp luminance buffer.
   /// Immediately after this is an interleaved buffer of 16bpp Cb, Cr pairs.
@@ -2618,40 +2621,43 @@ abstract class NDIlib_FourCC_video_type_e {
   static const int NDIlib_FourCC_type_RGBA = 1094862674;
 
   /// Planar 8bit, 4:4:4 video format, packed into 32bit pixels.
-  /// Color ordering in memory is red, green, blue, 255
+  /// Color ordering in memory is red, green, blue, 255.
   static const int NDIlib_FourCC_video_type_RGBX = 1480738642;
   static const int NDIlib_FourCC_type_RGBX = 1480738642;
 
-  /// Ensure that the size is 32bits
+  /// Make sure this is a 32-bit enumeration.
   static const int NDIlib_FourCC_video_type_max = 2147483647;
 }
 
-/// FourCC values for audio frames
+/// FourCC values for audio frames.
 abstract class NDIlib_FourCC_audio_type_e {
+  /// Planar 32-bit floating point. Be sure to specify the channel stride.
   static const int NDIlib_FourCC_audio_type_FLTP = 1884572742;
   static const int NDIlib_FourCC_type_FLTP = 1884572742;
 
-  /// Ensure that the size is 32bits
+  /// Make sure this is a 32-bit enumeration.
   static const int NDIlib_FourCC_audio_type_max = 2147483647;
 }
 
 abstract class NDIlib_frame_format_type_e {
+  /// A progressive frame.
   static const int NDIlib_frame_format_type_progressive = 1;
 
   /// A fielded frame with the field 0 being on the even lines and field 1 being
-  /// on the odd lines/
+  /// on the odd lines.
   static const int NDIlib_frame_format_type_interleaved = 0;
 
-  /// Individual fields
+  /// Individual fields.
   static const int NDIlib_frame_format_type_field_0 = 2;
   static const int NDIlib_frame_format_type_field_1 = 3;
 
-  /// Ensure that the size is 32bits
+  /// Make sure this is a 32-bit enumeration.
   static const int NDIlib_frame_format_type_max = 2147483647;
 }
 
 /// This is a descriptor of a NDI source available on the network.
 class NDIlib_source_t extends ffi.Struct {
+  /// A UTF8 string that provides a user readable name for this source. This can be used for serialization,
   /// etc... and comprises the machine name and the source name on that machine. In the form,
   /// MACHINE_NAME (NDI_SOURCE_NAME)
   /// If you specify this parameter either as NULL, or an EMPTY string then the specific IP address and port
@@ -2659,20 +2665,21 @@ class NDIlib_source_t extends ffi.Struct {
   external ffi.Pointer<ffi.Int8> p_ndi_name;
 }
 
-/// This describes a video frame
+/// This describes a video frame.
 class NDIlib_video_frame_v2_t extends ffi.Struct {
+  /// The resolution of this frame.
   @ffi.Int32()
   external int xres;
 
   @ffi.Int32()
   external int yres;
 
-  /// What FourCC describing the type of data for this frame
+  /// What FourCC describing the type of data for this frame.
   @ffi.Int32()
   external int FourCC;
 
-  /// What is the frame-rate of this frame.
-  /// For instance NTSC is 30000,1001 = 30000/1001 = 29.97fps
+  /// What is the frame rate of this frame.
+  /// For instance NTSC is 30000,1001 = 30000/1001 = 29.97 fps.
   @ffi.Int32()
   external int frame_rate_N;
 
@@ -2681,19 +2688,19 @@ class NDIlib_video_frame_v2_t extends ffi.Struct {
 
   /// What is the picture aspect ratio of this frame.
   /// For instance 16.0/9.0 = 1.778 is 16:9 video
-  /// 0 means square pixels
+  /// 0 means square pixels.
   @ffi.Float()
   external double picture_aspect_ratio;
 
-  /// Is this a fielded frame, or is it progressive
+  /// Is this a fielded frame, or is it progressive.
   @ffi.Int32()
   external int frame_format_type;
 
-  /// The timecode of this frame in 100ns intervals
+  /// The timecode of this frame in 100-nanosecond intervals.
   @ffi.Int64()
   external int timecode;
 
-  /// The video data itself
+  /// The video data itself.
   external ffi.Pointer<ffi.Uint8> p_data;
 
   /// Present in >= v2.5
@@ -2704,27 +2711,28 @@ class NDIlib_video_frame_v2_t extends ffi.Struct {
   external int timestamp;
 }
 
-/// This describes an audio frame
+/// This describes an audio frame.
 class NDIlib_audio_frame_v2_t extends ffi.Struct {
+  /// The sample-rate of this buffer.
   @ffi.Int32()
   external int sample_rate;
 
-  /// The number of audio channels
+  /// The number of audio channels.
   @ffi.Int32()
   external int no_channels;
 
-  /// The number of audio samples per channel
+  /// The number of audio samples per channel.
   @ffi.Int32()
   external int no_samples;
 
-  /// The timecode of this frame in 100ns intervals
+  /// The timecode of this frame in 100-nanosecond intervals.
   @ffi.Int64()
   external int timecode;
 
-  /// The audio data
+  /// The audio data.
   external ffi.Pointer<ffi.Float> p_data;
 
-  /// The inter channel stride of the audio channels, in bytes
+  /// The inter channel stride of the audio channels, in bytes.
   @ffi.Int32()
   external int channel_stride_in_bytes;
 
@@ -2736,48 +2744,50 @@ class NDIlib_audio_frame_v2_t extends ffi.Struct {
   external int timestamp;
 }
 
-/// This describes an audio frame
+/// This describes an audio frame.
 class NDIlib_audio_frame_v3_t extends ffi.Struct {
+  /// The sample-rate of this buffer.
   @ffi.Int32()
   external int sample_rate;
 
-  /// The number of audio channels
+  /// The number of audio channels.
   @ffi.Int32()
   external int no_channels;
 
-  /// The number of audio samples per channel
+  /// The number of audio samples per channel.
   @ffi.Int32()
   external int no_samples;
 
-  /// The timecode of this frame in 100ns intervals
+  /// The timecode of this frame in 100-nanosecond intervals.
   @ffi.Int64()
   external int timecode;
 
-  /// What FourCC describing the type of data for this frame
+  /// What FourCC describing the type of data for this frame.
   @ffi.Int32()
   external int FourCC;
 
-  /// The audio data
+  /// The audio data.
   external ffi.Pointer<ffi.Uint8> p_data;
 
   /// Per frame metadata for this frame. This is a NULL terminated UTF8 string that should be in XML format.
   /// If you do not want any metadata then you may specify NULL here.
   external ffi.Pointer<ffi.Int8> p_metadata;
 
-  /// This is only valid when receiving a frame and is specified as a 100ns time that was the exact moment
-  /// that the frame was submitted by the sending side and is generated by the SDK. If this value is
+  /// This is only valid when receiving a frame and is specified as a 100-nanosecond time that was the exact
+  /// moment that the frame was submitted by the sending side and is generated by the SDK. If this value is
   /// NDIlib_recv_timestamp_undefined then this value is not available and is NDIlib_recv_timestamp_undefined.
   @ffi.Int64()
   external int timestamp;
 }
 
-/// The data description for metadata
+/// The data description for metadata.
 class NDIlib_metadata_frame_t extends ffi.Struct {
+  /// The length of the string in UTF8 characters. This includes the NULL terminating character. If this is
   /// 0, then the length is assume to be the length of a NULL terminated string.
   @ffi.Int32()
   external int length;
 
-  /// The timecode of this frame in 100ns intervals
+  /// The timecode of this frame in 100-nanosecond intervals.
   @ffi.Int64()
   external int timecode;
 
@@ -2787,21 +2797,27 @@ class NDIlib_metadata_frame_t extends ffi.Struct {
 
 /// Tally structures
 class NDIlib_tally_t extends ffi.Struct {
+  /// Is this currently on program output.
   @ffi.Uint8()
   external int on_program;
 
-  /// Is this currently on preview output
+  /// Is this currently on preview output.
   @ffi.Uint8()
   external int on_preview;
 }
 
-/// The creation structure that is used when you are creating a finder
+/// Structures and type definitions required by NDI finding.
+/// The reference to an instance of the finder.
+class NDIlib_find_instance_type extends ffi.Opaque {}
+
+/// The creation structure that is used when you are creating a finder.
 class NDIlib_find_create_t extends ffi.Struct {
+  /// Do we want to include the list of NDI sources that are running on the local machine? If TRUE then
   /// local sources will be visible, if FALSE then they will not.
   @ffi.Uint8()
   external int show_local_sources;
 
-  /// Which groups do you want to search in for sources
+  /// Which groups do you want to search in for sources.
   external ffi.Pointer<ffi.Int8> p_groups;
 
   /// The list of additional IP addresses that exist that we should query for sources on. For instance, if
@@ -2813,9 +2829,11 @@ class NDIlib_find_create_t extends ffi.Struct {
   external ffi.Pointer<ffi.Int8> p_extra_ips;
 }
 
-/// Structures and type definitions required by NDI finding
-/// The reference to an instance of the finder
-typedef NDIlib_find_instance_t = ffi.Pointer<ffi.Void>;
+typedef NDIlib_find_instance_t = ffi.Pointer<NDIlib_find_instance_type>;
+
+/// Structures and type definitions required by NDI finding.
+/// The reference to an instance of the receiver.
+class NDIlib_recv_instance_type extends ffi.Opaque {}
 
 abstract class NDIlib_recv_bandwidth_e {
   /// Receive metadata.
@@ -2830,24 +2848,25 @@ abstract class NDIlib_recv_bandwidth_e {
   /// Receive metadata, audio, video at full resolution.
   static const int NDIlib_recv_bandwidth_highest = 100;
 
-  /// Ensure this is 32bits in size
+  /// Make sure this is a 32-bit enumeration.
   static const int NDIlib_recv_bandwidth_max = 2147483647;
 }
 
 abstract class NDIlib_recv_color_format_e {
-  /// When there is an alpha channel, this mode delivers BGRA
+  /// When there is no alpha channel, this mode delivers BGRX.
+  /// When there is an alpha channel, this mode delivers BGRA.
   static const int NDIlib_recv_color_format_BGRX_BGRA = 0;
 
-  /// When there is no alpha channel, this mode delivers UYVY
-  /// When there is an alpha channel, this mode delivers BGRA
+  /// When there is no alpha channel, this mode delivers UYVY.
+  /// When there is an alpha channel, this mode delivers BGRA.
   static const int NDIlib_recv_color_format_UYVY_BGRA = 1;
 
-  /// When there is no alpha channel, this mode delivers BGRX
-  /// When there is an alpha channel, this mode delivers RGBA
+  /// When there is no alpha channel, this mode delivers BGRX.
+  /// When there is an alpha channel, this mode delivers RGBA.
   static const int NDIlib_recv_color_format_RGBX_RGBA = 2;
 
-  /// When there is no alpha channel, this mode delivers UYVY
-  /// When there is an alpha channel, this mode delivers RGBA
+  /// When there is no alpha channel, this mode delivers UYVY.
+  /// When there is an alpha channel, this mode delivers RGBA.
   static const int NDIlib_recv_color_format_UYVY_RGBA = 3;
 
   /// This format will try to decode the video using the fastest available color format for the incoming
@@ -2858,7 +2877,7 @@ abstract class NDIlib_recv_color_format_e {
   /// When using this format, you should consider than allow_video_fields is true, and individual fields
   /// will always be delivered.
   ///
-  /// For most video sources on most platforms, this will follow the following conventions
+  /// For most video sources on most platforms, this will follow the following conventions.
   /// No alpha channel : UYVY
   /// Alpha channel    : UYVA
   static const int NDIlib_recv_color_format_fastest = 100;
@@ -2875,18 +2894,19 @@ abstract class NDIlib_recv_color_format_e {
   /// Alpha channel    : PA16 or UYVA
   static const int NDIlib_recv_color_format_best = 101;
 
-  /// Legacy definitions for backwards compatibility
+  /// Legacy definitions for backwards compatibility.
   static const int NDIlib_recv_color_format_e_BGRX_BGRA = 0;
   static const int NDIlib_recv_color_format_e_UYVY_BGRA = 1;
   static const int NDIlib_recv_color_format_e_RGBX_RGBA = 2;
   static const int NDIlib_recv_color_format_e_UYVY_RGBA = 3;
 
-  /// Force the size to be 32bits
+  /// Make sure this is a 32-bit enumeration.
   static const int NDIlib_recv_color_format_max = 2147483647;
 }
 
-/// The creation structure that is used when you are creating a receiver
+/// The creation structure that is used when you are creating a receiver.
 class NDIlib_recv_create_v3_t extends ffi.Struct {
+  /// The source that you wish to connect to.
   external NDIlib_source_t source_to_connect_to;
 
   /// Your preference of color space. See above.
@@ -2916,44 +2936,45 @@ class NDIlib_recv_create_v3_t extends ffi.Struct {
 /// This allows you determine the current performance levels of the receiving to be able to detect whether
 /// frames have been dropped.
 class NDIlib_recv_performance_t extends ffi.Struct {
+  /// The number of video frames.
   @ffi.Int64()
   external int video_frames;
 
-  /// The number of audio frames
+  /// The number of audio frames.
   @ffi.Int64()
   external int audio_frames;
 
-  /// The number of metadata frames
+  /// The number of metadata frames.
   @ffi.Int64()
   external int metadata_frames;
 }
 
-/// Get the current queue depths
+/// Get the current queue depths.
 class NDIlib_recv_queue_t extends ffi.Struct {
+  /// The number of video frames.
   @ffi.Int32()
   external int video_frames;
 
-  /// The number of audio frames
+  /// The number of audio frames.
   @ffi.Int32()
   external int audio_frames;
 
-  /// The number of metadata frames
+  /// The number of metadata frames.
   @ffi.Int32()
   external int metadata_frames;
 }
 
-/// Structures and type definitions required by NDI finding
-/// The reference to an instance of the receiver
-typedef NDIlib_recv_instance_t = ffi.Pointer<ffi.Void>;
+typedef NDIlib_recv_instance_t = ffi.Pointer<NDIlib_recv_instance_type>;
 
-/// In order to get the duration
+/// In order to get the duration.
 class NDIlib_recv_recording_time_t extends ffi.Struct {
+  /// The number of actual video frames recorded.
   @ffi.Int64()
   external int no_frames;
 
-  /// The starting time and current largest time of the record, in UTC time, at 100ns unit intervals. This
-  /// allows you to know the record time irrespective of frame-rate. For instance, last_time - start_time
-  /// would give you the recording length in 100ns intervals.
+  /// The starting time and current largest time of the record, in UTC time, at 100-nanosecond unit
+  /// intervals. This allows you to know the record time irrespective of frame rate. For instance,
+  /// last_time - start_time would give you the recording length in 100-nanosecond intervals.
   @ffi.Int64()
   external int start_time;
 
@@ -2961,15 +2982,20 @@ class NDIlib_recv_recording_time_t extends ffi.Struct {
   external int last_time;
 }
 
-/// The creation structure that is used when you are creating a sender
+/// Structures and type definitions required by NDI sending.
+/// The reference to an instance of the sender.
+class NDIlib_send_instance_type extends ffi.Opaque {}
+
+/// The creation structure that is used when you are creating a sender.
 class NDIlib_send_create_t extends ffi.Struct {
+  /// The name of the NDI source to create. This is a NULL terminated UTF8 string.
   external ffi.Pointer<ffi.Int8> p_ndi_name;
 
   /// What groups should this source be part of. NULL means default.
   external ffi.Pointer<ffi.Int8> p_groups;
 
   /// Do you want audio and video to "clock" themselves. When they are clocked then by adding video frames,
-  /// they will be rate limited to match the current frame-rate that you are submitting at. The same is true
+  /// they will be rate limited to match the current frame rate that you are submitting at. The same is true
   /// for audio. In general if you are submitting video and audio off a single thread then you should only
   /// clock one of them (video is probably the better of the two to clock off). If you are submitting audio
   /// and video of separate threads then having both clocked can be useful.
@@ -2980,24 +3006,26 @@ class NDIlib_send_create_t extends ffi.Struct {
   external int clock_audio;
 }
 
-/// Structures and type definitions required by NDI sending
-/// The reference to an instance of the sender
-typedef NDIlib_send_instance_t = ffi.Pointer<ffi.Void>;
-
-/// The creation structure that is used when you are creating a sender
-class NDIlib_routing_create_t extends ffi.Struct {
-  external ffi.Pointer<ffi.Int8> p_ndi_name;
-
-  /// What groups should this source be part of
-  external ffi.Pointer<ffi.Int8> p_groups;
-}
+typedef NDIlib_send_instance_t = ffi.Pointer<NDIlib_send_instance_type>;
 
 /// Structures and type definitions required by NDI routing.
 /// The reference to an instance of the router.
-typedef NDIlib_routing_instance_t = ffi.Pointer<ffi.Void>;
+class NDIlib_routing_instance_type extends ffi.Opaque {}
 
-/// This describes an audio frame
+/// The creation structure that is used when you are creating a sender.
+class NDIlib_routing_create_t extends ffi.Struct {
+  /// The name of the NDI source to create. This is a NULL terminated UTF8 string.
+  external ffi.Pointer<ffi.Int8> p_ndi_name;
+
+  /// What groups should this source be part of.
+  external ffi.Pointer<ffi.Int8> p_groups;
+}
+
+typedef NDIlib_routing_instance_t = ffi.Pointer<NDIlib_routing_instance_type>;
+
+/// This describes an audio frame.
 class NDIlib_audio_frame_interleaved_16s_t extends ffi.Struct {
+  /// The sample-rate of this buffer.
   @ffi.Int32()
   external int sample_rate;
 
@@ -3009,25 +3037,26 @@ class NDIlib_audio_frame_interleaved_16s_t extends ffi.Struct {
   @ffi.Int32()
   external int no_samples;
 
-  /// The timecode of this frame in 100ns intervals.
+  /// The timecode of this frame in 100-nanosecond intervals.
   @ffi.Int64()
   external int timecode;
 
-  /// The audio reference level in dB. This specifies how many dB above the reference level (+4dBU) is the
-  /// full range of 16 bit audio. If you do not understand this and want to just use numbers:
-  /// - If you are sending audio, specify +0dB. Most common applications produce audio at reference level.
-  /// - If receiving audio, specify +20dB. This means that the full 16 bit range corresponds to professional
-  /// level audio with 20dB of headroom. Note that if you are writing it into a file it might sound soft
-  /// because you have 20dB of headroom before clipping.
+  /// The audio reference level in dB. This specifies how many dB above the reference level (+4 dBU) is the
+  /// full range of 16-bit audio. If you do not understand this and want to just use numbers:
+  /// - If you are sending audio, specify +0 dB. Most common applications produce audio at reference level.
+  /// - If receiving audio, specify +20 dB. This means that the full 16-bit range corresponds to
+  /// professional level audio with 20 dB of headroom. Note that if you are writing it into a file it
+  /// might sound soft because you have 20 dB of headroom before clipping.
   @ffi.Int32()
   external int reference_level;
 
-  /// The audio data, interleaved 16bpp.
+  /// The audio data, interleaved 16-bit samples.
   external ffi.Pointer<ffi.Int16> p_data;
 }
 
 /// This describes an audio frame.
 class NDIlib_audio_frame_interleaved_32s_t extends ffi.Struct {
+  /// The sample-rate of this buffer.
   @ffi.Int32()
   external int sample_rate;
 
@@ -3039,25 +3068,26 @@ class NDIlib_audio_frame_interleaved_32s_t extends ffi.Struct {
   @ffi.Int32()
   external int no_samples;
 
-  /// The timecode of this frame in 100ns intervals.
+  /// The timecode of this frame in 100-nanosecond intervals.
   @ffi.Int64()
   external int timecode;
 
-  /// The audio reference level in dB. This specifies how many dB above the reference level (+4dBU) is the
-  /// full range of 16 bit audio. If you do not understand this and want to just use numbers:
-  /// - If you are sending audio, specify +0dB. Most common applications produce audio at reference level.
-  /// - If receiving audio, specify +20dB. This means that the full 16 bit range corresponds to professional
-  /// level audio with 20dB of headroom. Note that if you are writing it into a file it might sound soft
-  /// because you have 20dB of headroom before clipping.
+  /// The audio reference level in dB. This specifies how many dB above the reference level (+4 dBU) is the
+  /// full range of 32-bit audio. If you do not understand this and want to just use numbers:
+  /// - If you are sending audio, specify +0 dB. Most common applications produce audio at reference level.
+  /// - If receiving audio, specify +20 dB. This means that the full 32-bit range corresponds to
+  /// professional level audio with 20 dB of headroom. Note that if you are writing it into a file it
+  /// might sound soft because you have 20 dB of headroom before clipping.
   @ffi.Int32()
   external int reference_level;
 
-  /// The audio data, interleaved 32bpp.
+  /// The audio data, interleaved 32-bit samples.
   external ffi.Pointer<ffi.Int32> p_data;
 }
 
 /// This describes an audio frame.
 class NDIlib_audio_frame_interleaved_32f_t extends ffi.Struct {
+  /// The sample-rate of this buffer.
   @ffi.Int32()
   external int sample_rate;
 
@@ -3069,28 +3099,29 @@ class NDIlib_audio_frame_interleaved_32f_t extends ffi.Struct {
   @ffi.Int32()
   external int no_samples;
 
-  /// The timecode of this frame in 100ns intervals.
+  /// The timecode of this frame in 100-nanosecond intervals.
   @ffi.Int64()
   external int timecode;
 
-  /// The audio data, interleaved 32bpp.
+  /// The audio data, interleaved 32-bit floating-point samples.
   external ffi.Pointer<ffi.Float> p_data;
 }
 
 /// This describes a video frame
 class NDIlib_video_frame_t extends ffi.Struct {
+  /// The resolution of this frame.
   @ffi.Int32()
   external int xres;
 
   @ffi.Int32()
   external int yres;
 
-  /// What FourCC this is with. This can be two values
+  /// What FourCC this is with. This can be two values.
   @ffi.Int32()
   external int FourCC;
 
-  /// What is the frame-rate of this frame.
-  /// For instance NTSC is 30000,1001 = 30000/1001 = 29.97fps
+  /// What is the frame rate of this frame.
+  /// For instance NTSC is 30000,1001 = 30000/1001 = 29.97 fps
   @ffi.Int32()
   external int frame_rate_N;
 
@@ -3098,53 +3129,55 @@ class NDIlib_video_frame_t extends ffi.Struct {
   external int frame_rate_D;
 
   /// What is the picture aspect ratio of this frame.
-  /// For instance 16.0/9.0 = 1.778 is 16:9 video. If this is zero, then square pixels are assumed (xres/yres)
+  /// For instance 16.0/9.0 = 1.778 is 16:9 video. If this is zero, then square pixels are assumed (xres/yres).
   @ffi.Float()
   external double picture_aspect_ratio;
 
-  /// Is this a fielded frame, or is it progressive
+  /// Is this a fielded frame, or is it progressive.
   @ffi.Int32()
   external int frame_format_type;
 
-  /// The timecode of this frame in 100ns intervals
+  /// The timecode of this frame in 100-nanosecond intervals.
   @ffi.Int64()
   external int timecode;
 
-  /// The video data itself
+  /// The video data itself.
   external ffi.Pointer<ffi.Uint8> p_data;
 
-  /// The inter line stride of the video data, in bytes.
+  /// The inter-line stride of the video data, in bytes.
   @ffi.Int32()
   external int line_stride_in_bytes;
 }
 
 /// This describes an audio frame
 class NDIlib_audio_frame_t extends ffi.Struct {
+  /// The sample-rate of this buffer.
   @ffi.Int32()
   external int sample_rate;
 
-  /// The number of audio channels
+  /// The number of audio channels.
   @ffi.Int32()
   external int no_channels;
 
-  /// The number of audio samples per channel
+  /// The number of audio samples per channel.
   @ffi.Int32()
   external int no_samples;
 
-  /// The timecode of this frame in 100ns intervals
+  /// The timecode of this frame in 100-nanosecond intervals.
   @ffi.Int64()
   external int timecode;
 
-  /// The audio data
+  /// The audio data.
   external ffi.Pointer<ffi.Float> p_data;
 
-  /// The inter channel stride of the audio channels, in bytes
+  /// The inter channel stride of the audio channels, in bytes.
   @ffi.Int32()
   external int channel_stride_in_bytes;
 }
 
-/// The creation structure that is used when you are creating a receiver
+/// The creation structure that is used when you are creating a receiver.
 class NDIlib_recv_create_t extends ffi.Struct {
+  /// The source that you wish to connect to.
   external NDIlib_source_t source_to_connect_to;
 
   /// Your preference of color space. See above.
@@ -3165,8 +3198,11 @@ class NDIlib_recv_create_t extends ffi.Struct {
   external int allow_video_fields;
 }
 
-/// The type instance for a frame-synchronizer
-typedef NDIlib_framesync_instance_t = ffi.Pointer<ffi.Void>;
+/// The type instance for a frame-synchronizer.
+class NDIlib_framesync_instance_type extends ffi.Opaque {}
+
+typedef NDIlib_framesync_instance_t
+    = ffi.Pointer<NDIlib_framesync_instance_type>;
 
 /// NOTE : The following MIT license applies to this file ONLY and not to the SDK as a whole. Please review
 /// the SDK documentation for the description of the full license terms, which are also provided in the file
@@ -3176,7 +3212,7 @@ typedef NDIlib_framesync_instance_t = ffi.Pointer<ffi.Void>;
 ///
 /// ***********************************************************************************************************
 ///
-/// Copyright (C)2014-2021, NewTek, inc.
+/// Copyright (C)2014-2022, NewTek, inc.
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
 /// associated documentation files(the "Software"), to deal in the Software without restriction, including
