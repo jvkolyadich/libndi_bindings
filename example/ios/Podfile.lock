@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
-  libndi_bindings: bfeeb51d8cfa28138c9315f4cb7dae9399e41e87
+  libndi_bindings: 7d8cfb21e4915756dde1351cb4afca3d841eddca
 
 PODFILE CHECKSUM: 3efef3e4c4241ddf19165efb8229df7447127bfd
 
