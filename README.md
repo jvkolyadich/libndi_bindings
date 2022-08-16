@@ -13,7 +13,7 @@ unless you chose a different installation folder than /Library.
 
 Then, you can
 ```
-cd ios/StaticLibs
+cd ios/Frameworks
 ln -s /Library/NDI\ SDK\ for\ Apple/lib/iOS/libndi_ios.a
 cd ../../example
 flutter run
