@@ -21,6 +21,8 @@ Minimal project to get libndi bindings to work on ios.
   s.public_header_files = 'Classes/libndi_bindings.h'
   s.static_framework = true
   s.vendored_libraries = 'Frameworks/libndi_ios.a'
+  # s.vendored_libraries = 'Frameworks/libndi_ios.xcframework/ios-arm64_armv7/libndi_ios.a'
+  # s.vendored_libraries = 'Frameworks/libndi_ios.xcframework/ios-arm64_x86_64-simulator/libndi_ios.a'
 
   s.dependency 'Flutter'
   s.platform = :ios, '10.0'
@@ -30,6 +32,8 @@ Minimal project to get libndi bindings to work on ios.
     # Flutter.framework does not contain a i386 slice.
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386',
     'OTHER_LDFLAGS' => '-force_load $(PODS_TARGET_SRCROOT)/Frameworks/libndi_ios.a'
+    # 'OTHER_LDFLAGS' => '-force_load $(PODS_TARGET_SRCROOT)/Frameworks/libndi_ios.xcframework/ios-arm64_armv7/libndi_ios.a'
+    # 'OTHER_LDFLAGS' => '-force_load $(PODS_TARGET_SRCROOT)/Frameworks/libndi_ios.xcframework/ios-arm64_x86_64-simulator/libndi_ios.a'
   }
   s.swift_version = '5.0'
 end
