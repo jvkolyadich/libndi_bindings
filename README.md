@@ -18,3 +18,13 @@ ln -s /Library/NDI\ SDK\ for\ Apple/lib/iOS/libndi_ios.a
 cd ../../example
 flutter run
 ```
+
+## Using the test static library
+
+Run build_lib.sh from the test_lib_src folder
+```
+cd test_lib_src
+./build_lib.sh <CODE_SIGN_IDENTITY>
+```
+
+Uncomment the appropriate `s.vendored_libraries` and `OTHER_LDFLAGS` in `ios/libndi_bindings.podspec`
