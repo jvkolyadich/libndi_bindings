@@ -1,6 +1,7 @@
 
 import 'dart:ffi';
 import 'dart:io';
+import 'package:ffi/ffi.dart';
 
 import 'libndi_bindings_generated.dart';
 
@@ -17,6 +18,6 @@ final LibndiBindings _bindings = LibndiBindings(_dylib);
 
 class Libndi {
 
-  static String getVersion() => _bindings.NDIlib_version().toString();
+  static String getVersion() => _bindings.NDIlib_version().cast<Utf8>().toDartString();
 
 }
